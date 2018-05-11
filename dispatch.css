@@ -1,0 +1,17 @@
+body {
+	font-family: Consolas, inconsolata, monospace;
+	font-size: 14pt;
+}
+
+dt::after {
+  content: ": ";
+}
+
+dt {
+	margin-top: 0.5em;
+}
+
+body > div {
+	max-width: 800px; 
+	margin: auto;1
+}
