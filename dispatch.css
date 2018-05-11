@@ -11,6 +11,10 @@ dt {
 	margin-top: 0.5em;
 }
 
+dd + dd::before {
+	content: "- ";
+}
+
 body > div {
 	max-width: 800px; 
 	margin: auto;1
