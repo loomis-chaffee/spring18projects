@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Saved String</title>
+  <script type="text/javascript" src="elm.js"></script>
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+var storedString = localStorage.getItem('elm-save-SavingState2.elm');
+var startingState = storedString ? JSON.parse(storedString) : null;
+var app = Elm.SavingState2.fullscreen(startingState);
+app.ports.storeState.subscribe(function(state) {
+    localStorage.setItem('elm-save-SavingState2.elm', JSON.stringify(state));
+});
+</script>
+
+</html>
