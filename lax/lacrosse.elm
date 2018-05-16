@@ -121,8 +121,8 @@ replaceStarter index item list =
                 h :: replaceStarter (index - 1) item t
 
 
-attackAndDefense : List ( String, String, Bool ) -> List ( String, List ( Float, Float ) )
-attackAndDefense list =
+midfield : List ( String, String, Bool ) -> List ( String, List ( Float, Float ) )
+midfield list =
     if List.length list == 3 then
         List.map minPlayers list
     else if allEqual list then
@@ -131,8 +131,8 @@ attackAndDefense list =
         finishBlocks (removeLevel (transferBlocks (attackDefenseUnequalPlayerTimes (reorderLevel (reorderStarter list)) (attackDefenseBlocks (reorderLevel (reorderStarter list)))) (attackDefenseBlocks (reorderLevel (reorderStarter list)))))
 
 
-midfield : List ( String, String, Bool ) -> List ( String, List ( Float, Float ) )
-midfield list =
+attackAndDefense : List ( String, String, Bool ) -> List ( String, List ( Float, Float ) )
+attackAndDefense list =
     if List.length list == 4 then
         List.map minPlayers list
     else if allEqual list then
@@ -791,7 +791,7 @@ viewSchedule state =
 
 viewResultAttack : AppState -> Html.Html AppEvent
 viewResultAttack state =
-    if (List.length (state.attack)) < 3 then
+    if (List.length (state.attack)) < 4 then
         Html.text "Enter More Players For Attack In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button."
     else
         Html.text "Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups."
@@ -799,7 +799,7 @@ viewResultAttack state =
 
 viewResultMidfield : AppState -> Html.Html AppEvent
 viewResultMidfield state =
-    if (List.length (state.midfield)) < 4 then
+    if (List.length (state.midfield)) < 3 then
         Html.text "Enter More Players For Midfield In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button."
     else
         Html.text "Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups."
@@ -807,7 +807,7 @@ viewResultMidfield state =
 
 viewResultDefense : AppState -> Html.Html AppEvent
 viewResultDefense state =
-    if (List.length (state.defense)) < 3 then
+    if (List.length (state.defense)) < 4 then
         Html.text "Enter More Players For Defense In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button."
     else
         Html.text "Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups."

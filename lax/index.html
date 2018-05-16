@@ -8234,17 +8234,17 @@ var _elm_lang$html$Html_Events$Options = F2(
 var _user$project$Lacrosse$viewResultDefense = function (state) {
 	return (_elm_lang$core$Native_Utils.cmp(
 		_elm_lang$core$List$length(state.defense),
-		3) < 0) ? _elm_lang$html$Html$text('Enter More Players For Defense In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button.') : _elm_lang$html$Html$text('Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups.');
+		4) < 0) ? _elm_lang$html$Html$text('Enter More Players For Defense In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button.') : _elm_lang$html$Html$text('Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups.');
 };
 var _user$project$Lacrosse$viewResultMidfield = function (state) {
 	return (_elm_lang$core$Native_Utils.cmp(
 		_elm_lang$core$List$length(state.midfield),
-		4) < 0) ? _elm_lang$html$Html$text('Enter More Players For Midfield In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button.') : _elm_lang$html$Html$text('Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups.');
+		3) < 0) ? _elm_lang$html$Html$text('Enter More Players For Midfield In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button.') : _elm_lang$html$Html$text('Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups.');
 };
 var _user$project$Lacrosse$viewResultAttack = function (state) {
 	return (_elm_lang$core$Native_Utils.cmp(
 		_elm_lang$core$List$length(state.attack),
-		3) < 0) ? _elm_lang$html$Html$text('Enter More Players For Attack In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button.') : _elm_lang$html$Html$text('Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups.');
+		4) < 0) ? _elm_lang$html$Html$text('Enter More Players For Attack In This Order: Name of Player, Ability, Starter/Not Starter. Continue by pressing the new player button.') : _elm_lang$html$Html$text('Keep inputting players! If you have finished all 3 position groups, look at the schedule! If not, finish the other position groups.');
 };
 var _user$project$Lacrosse$indSchedule = function (list) {
 	return A2(
@@ -9299,7 +9299,7 @@ var _user$project$Lacrosse$minPlayers = function (player) {
 		}
 	};
 };
-var _user$project$Lacrosse$midfield = function (list) {
+var _user$project$Lacrosse$attackAndDefense = function (list) {
 	return _elm_lang$core$Native_Utils.eq(
 		_elm_lang$core$List$length(list),
 		4) ? A2(_elm_lang$core$List$map, _user$project$Lacrosse$minPlayers, list) : (_user$project$Lacrosse$allEqual(list) ? _user$project$Lacrosse$finishBlocks(
@@ -9322,7 +9322,7 @@ var _user$project$Lacrosse$midfield = function (list) {
 					_user$project$Lacrosse$reorderLevel(
 						_user$project$Lacrosse$reorderStarter(list)))))));
 };
-var _user$project$Lacrosse$attackAndDefense = function (list) {
+var _user$project$Lacrosse$midfield = function (list) {
 	return _elm_lang$core$Native_Utils.eq(
 		_elm_lang$core$List$length(list),
 		3) ? A2(_elm_lang$core$List$map, _user$project$Lacrosse$minPlayers, list) : (_user$project$Lacrosse$allEqual(list) ? _user$project$Lacrosse$finishBlocks(
