@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Saved String</title>
+  <script type="text/javascript" src="elm.js"></script>
+</head>
+
+<body>
+</body>
+
+<script type="text/javascript">
+var storedString = localStorage.getItem('scoutSchool101');
+var startingState = storedString ? JSON.parse(storedString) : null;
+var app = Elm.Scouting.fullscreen(startingState);
+app.ports.storeState.subscribe(function(state) {
+    localStorage.setItem('scoutSchool101', JSON.stringify(state));
+});
+</script>
+
+</html>
